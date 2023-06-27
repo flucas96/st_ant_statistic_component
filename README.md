@@ -2,7 +2,7 @@
 
 This is a Streamlit custom component that brings Ant Design's Statistic component to your Streamlit apps. It allows you to display a statistic with a title and a value, with optional prefix and suffix, all with customizable styles. You can also control the precision of the value and decide whether to show a loading animation. The component can be displayed as a standalone statistic or within a card.
 
-Check out the [live demo](https://flucas96-st-ant-statistic-app-d6d5xg.streamlit.app/)!
+Check out the [live demo](https://st-statistic.streamlit.app/)!
 
 ## Installation
 
