@@ -39,6 +39,7 @@ st_ant_statistic(
     card=True,
     height=60,
     loadingAnimation=True,
+    animationStarting=0,
     loadingDuration=3,
     card_bordered=True,
     card_hoverable=True,

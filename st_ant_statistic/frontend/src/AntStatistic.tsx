@@ -29,6 +29,7 @@ interface StatisticProps {
   alignValue: 'left' | 'right' | 'center',
   alignTitle: 'left' | 'right' | 'center',
   custom_font_awesome_url: string,
+  animationStarting: number
 }
 
 const StatisticComponent = (props: ComponentProps) => {
@@ -58,7 +59,16 @@ const StatisticComponent = (props: ComponentProps) => {
     alignValue,
     alignTitle,
     custom_font_awesome_url,
+    animationStarting
   }: StatisticProps = args;
+
+
+  const formatNumber = (value: number, precision: number, decimalSeperator: string): string => {
+    let [whole, fraction] = Number(value).toFixed(precision).split('.');
+    fraction = fraction ? decimalSeperator + fraction : '';
+    return whole + fraction;
+  };
+  
 
   const formatter = (value: number | string) => {
     if (typeof value === 'string') {
@@ -70,10 +80,12 @@ const StatisticComponent = (props: ComponentProps) => {
           separator={groupSeperator}
           decimals={precision}
           duration={loadingDuration}
+          decimal={decimalSeperator}
+          start={animationStarting}
         />
       );
     } else {
-      return Number(value).toFixed(precision); // apply precision when not animating
+      return formatNumber(value, precision, decimalSeperator);
     }
   };
 
@@ -83,6 +95,8 @@ const StatisticComponent = (props: ComponentProps) => {
     Streamlit.setComponentReady();
   }, [height]);
 
+
+  console.log(decimalSeperator)
   if (card) {
     return (
         <Card style={cardStyle} bordered={card_bordered} hoverable={card_hoverable} className={classCard}>

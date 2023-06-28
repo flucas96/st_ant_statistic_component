@@ -26,7 +26,7 @@ else:
 
 def st_ant_statistic(title:str, value:str, prefix:str=None,suffix:str=None, precision:int=2, loading:bool=False, decimalSeperator:str = ",", groupSeperator:str = ",", valueStyle:dict={}, titleStyle:dict={}, cardStyle:dict={}, 
                      classStatistic:str=None, classTitle:str=None, classCard:str=None, key:str="ant_statistic",card:bool=False, height:int=60, loadingAnimation:bool = False, loadingDuration:int = 3, card_bordered:bool = False, card_hoverable:bool = True,
-                     alignValue:str = "left", alignTitle:str = "left", custom_font_awesome_url = "https://kit.fontawesome.com/c7cbba6207.js"):
+                     alignValue:str = "left", alignTitle:str = "left", custom_font_awesome_url = "https://kit.fontawesome.com/c7cbba6207.js", animationStarting:int = 0):
     """
 
     Parameters
@@ -51,6 +51,7 @@ def st_ant_statistic(title:str, value:str, prefix:str=None,suffix:str=None, prec
     card_hoverable: bool, default True - If the card should be hoverable
     loadingAnimation: bool, default False - If the statistic should show a loading animation
     loadingDuration: int, default 500 - The duration of the loading animation in seconds (only used when loadingAnimation is True)
+    animationStarting: int, default 0 - The starting point of the animation (only used when loadingAnimation is True)
     alignValue: str, default "center" - The alignment of the value (possible values: "center", "left", "right")
     alignTitle: str, default "center" - The alignment of the title (possible values: "center", "left", "right")
 
@@ -74,6 +75,6 @@ def st_ant_statistic(title:str, value:str, prefix:str=None,suffix:str=None, prec
     _component_func(title = title, value = value, prefix = prefix, suffix = suffix, precision = precision, loading = loading, decimalSeperator = decimalSeperator, groupSeperator = groupSeperator, valueStyle = valueStyle, 
                     card = card, height = height,key=key, loadingAnimation = loadingAnimation, loadingDuration = loadingDuration, titleStyle = titleStyle, cardStyle = cardStyle,
                     card_bordered = card_bordered, card_hoverable = card_hoverable, classStatistic = classStatistic, classTitle = classTitle, classCard=classCard,
-                    alignValue = alignValue, alignTitle = alignTitle, custom_font_awesome_url = custom_font_awesome_url)
+                    alignValue = alignValue, alignTitle = alignTitle, custom_font_awesome_url = custom_font_awesome_url,animationStarting=animationStarting)
                                       
 
